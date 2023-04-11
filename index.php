@@ -40,13 +40,13 @@
 
  ];
 
- $parking = $_GET['parking'];
+ $parking = $_GET["parking"];
 
  $parking_filtered = [];
 
  if ($parking){
      foreach ($hotels as $hotel) {
-         if ($hotel["parking"]===true){
+         if ($hotel["parking"]=== true){
              $parking_filtered[] = $hotel ;
          }
      }
@@ -54,22 +54,18 @@
 
  ?>
 
- <!doctype html>
- <html lang="it">
-
+ <!DOCTYPE html>
+ <html lang="en">
  <head>
      <meta charset="utf-8">
      <meta name="viewport" content="width=device-width, initial-scale=1">
-     <title>cerca hotel</title>
+     <title>HOTEL</title>
      <!-- bootstrap  -->
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
  </head>
 
  <body>
      <div class="container my-4">
-         
-         <!-- /form -->
-         <!-- table -->
          <div>
              <table class="table table-info">
                  <thead>
@@ -82,7 +78,7 @@
                      </tr>
                  </thead>
                  <tbody>
-                     <!-- se form parking è true -->
+                     <!--parking è true -->
                      <?php if ($parking) : ?>
                          <?php foreach ($parking_filtered as $hotel) : ?>
                              <tr>
@@ -103,8 +99,7 @@
                                  </td>
                              </tr>
                          <?php endforeach; ?>
-                         <!-- /se form parking è true -->
-                         <!-- altrimenti -->
+                         <!-- parking false -->
                          <?php else : ?>
                              <?php foreach ($hotels as $hotel) : ?>
                                  <tr>
@@ -125,12 +120,10 @@
                                      </td>
                                  </tr>
                              <?php endforeach; ?>
-                             <!-- /altrimenti -->
                      <?php endif; ?>
                  </tbody>
              </table>
-             <!-- /table -->
-             <!-- form -->
+             <!-- ricerca-->
             <form class="row p-4 align-items-center" method="GET">
                 <div class="form-check col-auto ">
                     <input class="form-check-input" type="checkbox" id="parking" name="parking" value="true">
@@ -142,9 +135,7 @@
             </form>
          </div>
      </div>
-
-
-     <!-- IMPORT CDN BOOSTRAP JS -->
+     <!-- bootsrap -->
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
          integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
          crossorigin="anonymous"></script>
